@@ -1,5 +1,5 @@
 # Math-Tex
-Introduction:*
+Introduction:
 
 math-tex is a rich text editor specially designed for blind and visually impaired. It will help them to write complex mathematical equations. It has inbuilt screen reader.
 
