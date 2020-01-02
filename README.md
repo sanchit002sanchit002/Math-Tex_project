@@ -51,7 +51,7 @@ Software will use m-m-d (alt + m + d) this will print "d" or "debba" on screen a
 
 $\displaystyle \frac{[differential] y}{[differential] x}$
 
-In this case, user should press m-m-f (alt + m + f) for initial fraction, then should press m-m-d (alt + m + d). Once both symbols spoken ou, then he would enter value for "y".
+In this case, user should press m-m-f (alt + m + f) for initial fraction, then should press m-m-d (alt + m + d). Once both symbols spoken out, then he should enter value for "y".
 
 $\displaystyle \frac{[differential]^{n}y}{[differential] x^{n}}$
 
