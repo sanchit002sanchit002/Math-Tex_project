@@ -31,11 +31,12 @@ we have to create different objects for following symbols
 
 
 Keybord shortcut | mathematical symbol | latex command
+
 -----------------|---------------------|--------------
     m-m-         |  wait for 1 more key|    -
-    m-m-f       |  fraction symbol    |  $\frac{}$  
-    m-m-d       |  d  (delta)         |  $|diff
-    m-m-i       |  integral symbol    |  \int
+    m-m-f        |  fraction symbol    |  $\frac{}$  
+    m-m-d        |  d  (delta)         |  $|diff
+    m-m-i        |  integral symbol    |  \int
 
 
 >    fraction (/)
