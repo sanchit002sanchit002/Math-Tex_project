@@ -31,7 +31,6 @@ we have to create different objects for following symbols
 
 
 Keybord shortcut | mathematical symbol | latex command
-
 -----------------|---------------------|--------------
     m-m-         |  wait for 1 more key|    -
     m-m-f        |  fraction symbol    |  $\frac{}$  
