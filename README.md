@@ -29,39 +29,56 @@ and emacspeak for windows <https://github.com/SaqibS/emacspeak-on-windows>
 
 we have to create different objects for following symbols
 
+Keybord shortcut | mathematical symbol | latex command
+-----------------|---------------------|--------------
+    m-m-         |  wait for 1 more key|    -
+    m-m-f       |  fraction symbol    |  $\frac{}$  
+
+
 >    fraction (/)
 
-$in line $\displaystyle \frac{a}{b}$ code$
+$\displaystyle \frac{a}{b}$ 
+
+let's say, after pressing m-m-f (alt + m + f) software will print fraction symbol  and TTS will speak fraction. Then focus will automatically  move to numerator and TTS says"numerator" where user will have option to input "a" value. Similarly after pressing enter or right arrow key focus will now move to denominator and TTS will say "denominator" and again user have option to input value of "b".  
+After one more "Enter key" it will move out of this fraction.
 
 >    Differential
 
-in line $\displaystyle \frac{[differential]}{[differential] x}$ code
+Software will use m-m-d (alt + m + d) this will print "d" or "debba" on screen and TTS output.
 
-in line $\displaystyle \frac{[differential]^{n}y}{[differential] x^{n}}$ code
+$\displaystyle \frac{[differential] y}{[differential] x}$
+
+In this case, user should press m-m-f (alt + m + f) for initial fraction, then should press m-m-d (alt + m + d). Once both symbols spoken ou, then he would enter value for "y".
+
+$\displaystyle \frac{[differential]^{n}y}{[differential] x^{n}}$
+
+To move focus on superscript (power) user should press m-up arrow (alt + ↑) 
 
 >    Integral
 
-in line $\displaystyle \int_{F(x)dx}$ code
+Software will use m-m-i (alt + m + i) key to print "integral" symbol and TTS will speak out.
+To move focus on subscript (base) user should press m-down arrow (alt +↓)  
+$\displaystyle \int_{F(x)dx}$
 
-in line $\displaystyle \int_{0}^{\pi F(x)dx}$ code
+$\displaystyle \int_{0}^{\pi F(x)dx}$
 
-in line $\displaystyle \int_{0}^{2\pi F(x)dx}$ code
+$\displaystyle \int_{0}^{2\pi F(x)dx}$
 
 >    some special symbols 
 
-in line $\alpha$ code 
+$\alpha$
 
-in line $\beta$ code 
+$\beta$
 
-in line $\gamma$ code
+$\gamma$
 
-in line $\delta$ code 
+$\delta$
 
-in line $\epsilon$ code 
+$\epsilon$
 
-in line $\theta\lambda$ code 
+$\theta\lambda$
 
-in line $\mu$ code
+$\mu$
 
 trigonometric functions and so many other functions.
 
