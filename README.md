@@ -87,3 +87,10 @@ trigonometric functions and so many other functions.
 
 **Remember we have to assign key binding for every symbol.**
 
+
+### Important links:
+
+<http://www.unicode.org/notes/tn28/UTN28-PlainTextMath-v2.pdf>
+
+
+---------------------------------------------------------------------------
