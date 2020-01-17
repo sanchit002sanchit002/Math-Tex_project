@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Auto Update Div with Content from Textarea</title>
+<style>
+    .output{
+        padding: 10px;
+        min-height: 50px;
+        border: 1px solid #e4e4e4;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#myTextarea").keyup(function(){
+        // Getting the current value of textarea
+        var currentText = $(this).val();
+        
+        // Setting the Div content
+        $(".output").text(currentText);
+    });
+});
+</script>
+</head>
+<body>
+    <form>
+        <textarea id="myTextarea" aline="left" rows="5" cols="60" placeholder="Type something here..."></textarea>
+    </form>
+    <div class="output">aline="right"</div>
+</body>
+</html>
