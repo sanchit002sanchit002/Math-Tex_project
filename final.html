@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MathTex</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- <script type="text/javascript" src="../MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+input {margin-top: .7em}
+.output {
+  border: 1px solid black;
+  padding: 1em;
+  width: auto;
+  position: absolute; top: 0; left: 2em;
+  min-width: 20em;
+}
+.box {position: relative}
+</style>
+</head>
+<body>
+
+<script>
+  
+  (function () {
+    var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
+    var math = null, box = null;    // the element jax for the math output, and the box it's in
+
+    //
+    //  Hide and show the box (so it doesn't flicker as much)
+    //
+    var HIDEBOX = function () {box.style.visibility = "hidden"}
+    var SHOWBOX = function () {box.style.visibility = "visible"}
+
+    
+    QUEUE.Push(function () {
+      math = MathJax.Hub.getAllJax("MathOutput")[0];
+      box = document.getElementById("box");
+      SHOWBOX(); // box is initially hidden so the braces don't show
+    });
+
+    
+    window.UpdateMath = function (TeX) {
+      QUEUE.Push(
+          HIDEBOX,
+          ["resetEquationNumbers",MathJax.InputJax.TeX],
+          ["Text",math,"\\displaystyle{"+TeX+"}"],
+          SHOWBOX
+      );
+    }
+  })();
+</script>
+
+<p style="text-align: center;"> 
+    <ol>
+        <li> Alt + F - Fraction </li>
+        <li> Alt + I - Integration </li>
+        <li> Alt + S - Square root </li>
+        <li> Alt + M - summation </li>
+        <li> Alt + Z - Double Summation </li>
+        <li> Alt + D - Differential </li>
+        <li> Alt + R - Displays the Latex code</li>
+    </ol>
+    <br /> 
+</p>
+<!-- <input id="MathInput" onchange="UpdateMath(this.value)" /> -->
+<p id="YO" style="text-align: center;">Normal Format</p>
+
+<p style="text-align: center;">In Latex</p>
+<div class="box" id="box" style="visibility:hidden">
+
+<p id="outputBox" style="text-align: center;"><div id="MathOutput" class="output" style="display: inline-block;">$${}$$</div></p>
+</div>
+
+<script>
+  var doc = document.getElementById("YO");
+  doc.value = " ";
+
+  if (MathJax.Hub.Browser.isMSIE) {
+    MathInput.onkeypress = function () {
+      if (window.event && window.event.keyCode === 13) {this.blur(); this.focus()}
+    }
+  }
+
+
+  $(document).on("keydown", function(e){
+
+    var doc = document.getElementById("YO");
+    console.log(doc)
+
+    if(e.altKey && e.which == 70) //Alt + F is pressed which open prompt for fraction
+    {
+        
+            var num = prompt("Please enter the numerator of fraction");
+            var den = prompt("Please enter the denominator of fraction");
+
+            //doc.value += " \\displaystyle \\frac{" + num + "}{" + den + "}";
+            doc.value += "\\frac{" + num.toString() + "}{" + den.toString() + "}";
+            doc.innerHTML += " " + num.toString() + "/" + den.toString();
+    
+    }
+    else if (e.altKey && e.which == 73) ////Alt + I is pressed which open prompt for integration
+    {
+        var choice = prompt("Do you want to have with limits or not? Enter y or n");
+
+        if (choice == "n")
+        {
+            var fn = prompt("Please enter function in x");
+            doc.value += "\\displaystyle \\int " + fn +"dx";
+            doc.innerHTML += "integral " + fn +"dx";
+            //$\displaystyle \int$
+            
+        }
+        else if (choice == "y")
+        {
+            var fn = prompt("Please enter function in x");
+            var l = prompt("Please enter lower limit");
+            var h = prompt("Please enter upper limit");
+            doc.value += "\\displaystyle \\int_{" + l + "}^{" + h + "}" + fn + "dx";
+            doc.innerHTML += "Integral" + fn + "from" + l + "to" + h;
+        }
+
+    }
+    else if (e.altKey && e.which == 77) //Alt + M is pressed which open prompt for summation
+    {
+
+        var fn = prompt("Please function inside the summation");
+        var l = prompt("Please enter lower limit");
+        var h = prompt("Please enter upper limit");
+        doc.value += "\\displaystyle \\sum_{n=" + l + "}^{" + h + "}" + fn;
+        doc.innerHTML += "Summation" + fn + "from" + l + "to" + h;
+    }
+    else if (e.altKey && e.which == 90) //Alt + Z is pressed which open prompt for double summation
+    {
+        var fn = prompt("Please function inside the summation");
+        var l1 = prompt("Please enter first lower limit");
+        var h1 = prompt("Please enter first upper limit");
+        var l2 = prompt("Please enter first lower limit");
+        var h2 = prompt("Please enter first upper limit");
+        doc.value += "\\displaystyle \\sum_{i=" + l1 +"}^{" + h1 +"}\\sum_{j=" + l2 + "}^{" +h2+ "}" + fn;
+    }
+    else if (e.altKey && e.which == 68) //Alt + D is pressed which open prompt for differential
+    {
+
+        var fn = prompt("Please function in x inside the differential");
+        var l = prompt("Please enter the order of differentiation");
+
+        if(l=="1")
+        {
+            doc.value += "\\displaystyle \\frac{\\delta " + fn + "}{\\delta X}";
+        }
+        else
+        {
+            doc.value += "\\displaystyle \\frac{\\delta^{" + l + "}" + fn +"}{\\delta X^{"+ l +"}}";
+        }
+    }
+
+    else if (e.altKey && e.which == 83) //Alt + S is pressed which open prompt for square root
+    {
+    
+        var fn = prompt("Please function inside the square root");
+        doc.value += "\\sqrt{" + fn + "}";
+    }
+
+    if(e.altKey && e.which == 82)
+    {
+        UpdateMath(document.getElementById('YO').value)
+    }
+    }
+
+  )
+</script>
+
+</body>
+</html>
