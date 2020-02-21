@@ -1,8 +1,18 @@
-# Math-Tex
+# Math-Tex 
+A Math editing software for visually impaired.
+
+We have 2 kinds of applications right now.
+* A JavaScript based web application
+* A Java based Standalone application
+
+## The web app can be run directly on the browser
+## The Java App needs to be run using ``` java -jar <JLatexMathDemoAwt.jar> ```
+
+### Initial Plans for Math-Tex
 
 **Introduction:**
 
-math-tex is a rich text editor specially designed for blind and visually impaired. It will help them to write complex mathematical equations. It has inbuilt screen reader.
+math-tex is a rich text editor specially designed for blind and visually impaired. It will help them to write complex mathematical equations. 
 
 **Implementation:**
 
@@ -14,7 +24,7 @@ from the text editor interface, this mode is activated by keyboard shortcut like
 2.    Text input: 
 Our software will launch in this mode by default.
 
-## Execution
+#### Execution
 
 *  espeak text to speech engine
 
@@ -28,7 +38,7 @@ and emacspeak for windows <https://github.com/SaqibS/emacspeak-on-windows>
 *  Math Input 
 
 we have to create different objects for following symbols
-
+        
 
 Keybord shortcut | mathematical symbol | latex command
 -----------------|---------------------|--------------
